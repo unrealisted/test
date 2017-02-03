@@ -1,0 +1,58 @@
+<!doctype html>
+<html data-ng-app="test">
+<head>
+  <title data-ng-bind="seo.title">test</title>
+
+  <base href="/">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+
+  <meta name="title" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="" />
+
+  <link href="assets/styles/main.css" rel='stylesheet' type='text/css'/>
+
+</head>
+
+<body ng-cloak ng-controller="MainCtrl as Main">
+<header>
+  <button class="back ng-hide" data-ng-click="Main.goStateBack()" ng-hide="'First' | isState">Back</button>
+  <button class="home" ui-sref="First">Home</button>
+</header>
+<div class="content">
+  <div class="breadcrumbs">
+    <ul>
+      <li>
+        <a ui-sref="First">Home</a>
+      </li>
+      <li ng-repeat="state in Main.backCrumbs" ng-class="{'notActive':$last}">
+        <a ui-sref="{{state}}">{{state}}</a>
+      </li>
+    </ul>
+  </div>
+  <ui-view></ui-view>
+</div>
+<footer></footer>
+</body>
+<!--Libs-->
+<script type="text/javascript" src="assets/js/libs.js"></script>
+<!--Modules-->
+<script type="text/javascript" src="app/app.module.js"></script>
+<script type="text/javascript" src="app/components/first/first.module.js"></script>
+<script type="text/javascript" src="app/components/second/second.module.js"></script>
+<script type="text/javascript" src="app/components/third/third.module.js"></script>
+<!--Route-->
+<script type="text/javascript" src="app/app.route.js"></script>
+<script type="text/javascript" src="app/components/first/first.route.js"></script>
+<script type="text/javascript" src="app/components/second/second.route.js"></script>
+<script type="text/javascript" src="app/components/third/third.route.js"></script>
+<!--Controllers-->
+<script type="text/javascript" src="app/components/main.ctrl.js"></script>
+<script type="text/javascript" src="app/components/first/first.Ctrl.js"></script>
+<script type="text/javascript" src="app/components/second/second.Ctrl.js"></script>
+<script type="text/javascript" src="app/components/third/third.Ctrl.js"></script>
+</html>
