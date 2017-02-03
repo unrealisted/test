@@ -9,7 +9,7 @@
 
   function AppRoute($urlRouterProvider, $locationProvider) {
 
-    $locationProvider.html5Mode(true); //change
+    $locationProvider.html5Mode(false); //change
     $urlRouterProvider.otherwise('/user_data');
 
   }
